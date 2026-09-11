@@ -1,0 +1,52 @@
+version: "1.0"
+name: mcp-server-ts
+description: TypeScript MCP Server 模板，基于 @modelcontextprotocol/sdk，stdio 传输
+variables:
+  enabled: true
+  delimiter: "%"
+  filePatterns:
+    mode: include
+    patterns:
+      - package.json
+      - README.md
+      - AGENTS.md
+      - src/**/*.ts
+  inquirerQuestions:
+    - name: serverName
+      type: input
+      message: MCP 服务器名称（用于 McpServer 名称与 package.json name）
+      default: demo-mcp-server
+      required: true
+    - name: description
+      type: input
+      message: 项目描述
+      default: 一个 MCP 服务器
+    - name: author
+      type: input
+      message: 作者
+      default: ""
+    - name: version
+      type: input
+      message: 初始版本号
+      default: 0.1.0
+hooks:
+  after_write:
+    scriptType: shell
+    script: git init && git add -A && git commit -m "chore: init project from template"
+    errorHandling: warn
+market:
+  slug: mcp-server-ts
+  name: MCP Server（TypeScript）
+  summary: 基于 @modelcontextprotocol/sdk 的 TypeScript MCP Server 脚手架，stdio 传输，开箱即用
+  description: |
+    一个生产可用的 TypeScript MCP（Model Context Protocol）服务器模板：
+
+    - 基于官方 SDK `@modelcontextprotocol/sdk`（^1.x），使用 stdio 传输
+    - 内置两个示例工具（echo、calculate），用 zod 定义输入 schema
+    - 内置一个示例资源（server-info），演示资源注册方式
+    - 使用 tsup 构建，`package.json` 已配置 `bin` 字段，可直接作为命令行工具
+    - 集成 Vitest 示例测试、ESLint 与 Prettier
+    - README 包含在 Claude Desktop 等 MCP 客户端中的配置方法
+  category: AI 与 MCP
+  tags: [TypeScript, MCP, Model Context Protocol, AI 工具]
+  version: 1.0.0
