@@ -50,3 +50,17 @@ market:
   category: AI 与 MCP
   tags: [TypeScript, MCP, Model Context Protocol, AI 工具]
   version: 1.0.0
+  gitUrl: https://github.com/agilebuilder/template-node-typescript-mcp-server.git
+  defaultBranch: main
+  englishMetadata:
+    name: TypeScript MCP server
+    summary: MCP server starter using the official SDK and stdio transport.
+    description: An ESM TypeScript MCP server with tool and resource registration,
+      Zod input validation, stdio transport and tests for pure handlers.
+      Diagnostic logs use stderr so stdout remains available to the protocol.
+    category: AI and MCP
+    tags:
+      - TypeScript
+      - MCP
+      - Model Context Protocol
+      - AI tools
