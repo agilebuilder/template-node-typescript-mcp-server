@@ -1,13 +1,13 @@
 import { describe, expect, it } from "vitest";
 import { echoHandler } from "../src/tools/echo.js";
 
-describe("echo 工具", () => {
-  it("原样返回输入消息", () => {
+describe("echo tool", () => {
+  it("returns the input message unchanged", () => {
     const result = echoHandler({ message: "hello mcp" });
     expect(result.content).toEqual([{ type: "text", text: "hello mcp" }]);
   });
 
-  it("支持空字符串", () => {
+  it("supports empty strings", () => {
     const result = echoHandler({ message: "" });
     expect(result.content[0].text).toBe("");
   });

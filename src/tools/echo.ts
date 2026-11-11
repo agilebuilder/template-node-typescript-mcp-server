@@ -2,7 +2,7 @@ import { z } from "zod";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 
 export const echoInputSchema = {
-  message: z.string().describe("要回显的消息"),
+  message: z.string().describe("Message to echo back"),
 };
 
 export function echoHandler({ message }: { message: string }) {
@@ -14,7 +14,7 @@ export function echoHandler({ message }: { message: string }) {
 export function registerEchoTool(server: McpServer) {
   server.tool(
     "echo",
-    "将输入消息原样返回",
+    "Return the input message unchanged",
     echoInputSchema,
     async ({ message }) => echoHandler({ message }),
   );

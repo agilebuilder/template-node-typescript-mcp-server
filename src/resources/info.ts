@@ -5,8 +5,8 @@ export function registerInfoResource(server: McpServer) {
     "server-info",
     "server://info",
     {
-      title: "服务器信息",
-      description: "返回该 MCP 服务器的基本信息（名称与版本）",
+      title: "Server Info",
+      description: "Returns basic information about this MCP server (name and version)",
       mimeType: "application/json",
     },
     async (uri) => ({

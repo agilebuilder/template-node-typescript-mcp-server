@@ -4,9 +4,9 @@ import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 export const calculateInputSchema = {
   operation: z
     .enum(["add", "subtract", "multiply", "divide"])
-    .describe("运算类型"),
-  a: z.number().describe("第一个操作数"),
-  b: z.number().describe("第二个操作数"),
+    .describe("Arithmetic operation"),
+  a: z.number().describe("First operand"),
+  b: z.number().describe("Second operand"),
 };
 
 export type CalculateInput = {
@@ -19,7 +19,7 @@ export function calculate({ operation, a, b }: CalculateInput) {
   if (operation === "divide" && b === 0) {
     return {
       isError: true as const,
-      content: [{ type: "text" as const, text: "除数不能为 0" }],
+      content: [{ type: "text" as const, text: "Division by zero is not allowed" }],
     };
   }
 
@@ -40,7 +40,7 @@ export function calculate({ operation, a, b }: CalculateInput) {
 export function registerCalculateTool(server: McpServer) {
   server.tool(
     "calculate",
-    "对两个数字执行加减乘除运算",
+    "Perform addition, subtraction, multiplication, or division on two numbers",
     calculateInputSchema,
     async (input) => calculate(input as CalculateInput),
   );

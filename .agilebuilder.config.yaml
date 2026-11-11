@@ -1,6 +1,6 @@
 version: "1.0"
 name: mcp-server-ts
-description: TypeScript MCP Server 模板，基于 @modelcontextprotocol/sdk，stdio 传输
+description: TypeScript MCP Server template based on @modelcontextprotocol/sdk with stdio transport
 variables:
   enabled: true
   delimiter: "%"
@@ -9,25 +9,26 @@ variables:
     patterns:
       - package.json
       - README.md
+      - README.zh-CN.md
       - AGENTS.md
       - src/**/*.ts
   inquirerQuestions:
     - name: serverName
       type: input
-      message: MCP 服务器名称（用于 McpServer 名称与 package.json name）
+      message: MCP server name (used for the McpServer name and package.json name)
       default: demo-mcp-server
       required: true
     - name: description
       type: input
-      message: 项目描述
-      default: 一个 MCP 服务器
+      message: Project description
+      default: An MCP server
     - name: author
       type: input
-      message: 作者
+      message: Author
       default: ""
     - name: version
       type: input
-      message: 初始版本号
+      message: Initial version
       default: 0.1.0
 hooks:
   after_write:
