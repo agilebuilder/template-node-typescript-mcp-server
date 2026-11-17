@@ -37,31 +37,33 @@ hooks:
     errorHandling: warn
 market:
   slug: mcp-server-ts
-  name: MCP Server（TypeScript）
-  summary: 基于 @modelcontextprotocol/sdk 的 TypeScript MCP Server 脚手架，stdio 传输，开箱即用
+  name: TypeScript MCP server
+  summary: MCP server starter using the official SDK and stdio transport.
   description: |
-    一个生产可用的 TypeScript MCP（Model Context Protocol）服务器模板：
+    A production-ready TypeScript MCP (Model Context Protocol) server template:
 
-    - 基于官方 SDK `@modelcontextprotocol/sdk`（^1.x），使用 stdio 传输
-    - 内置两个示例工具（echo、calculate），用 zod 定义输入 schema
-    - 内置一个示例资源（server-info），演示资源注册方式
-    - 使用 tsup 构建，`package.json` 已配置 `bin` 字段，可直接作为命令行工具
-    - 集成 Vitest 示例测试、ESLint 与 Prettier
-    - README 包含在 Claude Desktop 等 MCP 客户端中的配置方法
-  category: AI 与 MCP
-  tags: [TypeScript, MCP, Model Context Protocol, AI 工具]
+    - Built on the official `@modelcontextprotocol/sdk` (^1.x) with stdio transport
+    - Two example tools (echo, calculate) with zod-defined input schemas
+    - One example resource (server-info) demonstrating resource registration
+    - Built with tsup; `package.json` ships a `bin` field so it runs as a CLI
+    - Vitest example tests, ESLint and Prettier included
+    - README covers configuration in MCP clients such as Claude Desktop
+  category: AI and MCP
+  tags: [TypeScript, MCP, Model Context Protocol, AI tools]
   version: 1.0.0
   gitUrl: https://github.com/agilebuilder/template-node-typescript-mcp-server.git
   defaultBranch: main
-  englishMetadata:
-    name: TypeScript MCP server
-    summary: MCP server starter using the official SDK and stdio transport.
-    description: An ESM TypeScript MCP server with tool and resource registration,
-      Zod input validation, stdio transport and tests for pure handlers.
-      Diagnostic logs use stderr so stdout remains available to the protocol.
-    category: AI and MCP
-    tags:
-      - TypeScript
-      - MCP
-      - Model Context Protocol
-      - AI tools
+  metadata-zh:
+    name: MCP Server（TypeScript）
+    summary: 基于 @modelcontextprotocol/sdk 的 TypeScript MCP Server 脚手架，stdio 传输，开箱即用
+    description: |
+      一个生产可用的 TypeScript MCP（Model Context Protocol）服务器模板：
+
+      - 基于官方 SDK `@modelcontextprotocol/sdk`（^1.x），使用 stdio 传输
+      - 内置两个示例工具（echo、calculate），用 zod 定义输入 schema
+      - 内置一个示例资源（server-info），演示资源注册方式
+      - 使用 tsup 构建，`package.json` 已配置 `bin` 字段，可直接作为命令行工具
+      - 集成 Vitest 示例测试、ESLint 与 Prettier
+      - README 包含在 Claude Desktop 等 MCP 客户端中的配置方法
+    category: AI 与 MCP
+    tags: [TypeScript, MCP, Model Context Protocol, AI 工具]
